@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --trooth-primary-100: 235 240 245;
+  --trooth-primary-200: 161 214 206;
+  --trooth-primary-300: 120 192 189;
+  --trooth-primary-400: 79 170 172;
+  --trooth-primary-500: 39 148 155;
+}
