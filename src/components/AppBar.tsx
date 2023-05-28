@@ -13,7 +13,9 @@ const baseLinkClass = cn(
 );
 
 export const AppBar = () => {
-  const [hasScrolled, setHasScrolled] = useState(window.scrollY > 0);
+  const [hasScrolled, setHasScrolled] = useState(
+    typeof window !== "undefined" && window.scrollY > 0,
+  );
 
   useEffect(() => {
     function handleScroll() {
