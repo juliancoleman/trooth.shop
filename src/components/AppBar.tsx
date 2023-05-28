@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { ShoppingCart } from "@phosphor-icons/react";
 import cn from "classnames";
+import { useState, useEffect } from "react";
 
 import { comfortaaBoldAlt2, nunitoSansRegular } from "@/config/fonts";
 
@@ -11,31 +12,61 @@ const baseLinkClass = cn(
   "rounded-full p-3.5 text-base leading-none text-trooth-primary-500 hover:bg-white",
 );
 
-export const AppBar = () => (
-  <header className="relative top-0 z-10 mx-auto flex max-w-[1080px] items-center justify-between px-6 py-2.5 sm:sticky">
-    <Link
-      href="/"
-      className={cn(
-        comfortaaBoldAlt2.className,
-        "text-2xl tracking-tight",
-        "bg-logo-color bg-clip-text text-transparent",
-      )}
+export const AppBar = () => {
+  const [hasScrolled, setHasScrolled] = useState(window.scrollY > 0);
+
+  useEffect(() => {
+    function handleScroll() {
+      if (window.scrollY > 0) {
+        return setHasScrolled(true);
+      }
+
+      return setHasScrolled(false);
+    }
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  return (
+    <header
+      className={cn("relative top-0 z-10 transition-all sm:sticky", {
+        "sm:bg-white sm:bg-opacity-100 sm:shadow-sm": hasScrolled,
+      })}
     >
-      trooth
-    </Link>
+      <nav
+        className={cn(
+          "mx-auto flex max-w-[1080px] items-center justify-between px-6 py-2.5",
+        )}
+      >
+        <Link
+          href="/"
+          className={cn(
+            comfortaaBoldAlt2.className,
+            "text-2xl tracking-tight",
+            "bg-logo-color bg-clip-text text-transparent",
+          )}
+        >
+          trooth
+        </Link>
 
-    <nav className="hidden gap-2 sm:flex">
-      <Link href="/subscriptions" className={baseLinkClass}>
-        Subscriptions
-      </Link>
-      <Link href="/mission" className={baseLinkClass}>
-        Our Mission
-      </Link>
-      <Link href="/support" className={baseLinkClass}>
-        Support
-      </Link>
-    </nav>
+        <nav className="hidden gap-2 sm:flex">
+          <Link href="/subscriptions" className={baseLinkClass}>
+            Subscriptions
+          </Link>
+          <Link href="/mission" className={baseLinkClass}>
+            Our Mission
+          </Link>
+          <Link href="/support" className={baseLinkClass}>
+            Support
+          </Link>
+        </nav>
 
-    <ShoppingCart size={32} className="cursor-pointer" />
-  </header>
-);
+        <ShoppingCart size={32} className="cursor-pointer" />
+      </nav>
+    </header>
+  );
+};
