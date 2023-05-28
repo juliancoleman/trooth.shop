@@ -22,6 +22,7 @@ module.exports = {
       backgroundImage: {
         "logo-color":
           "linear-gradient(90deg, rgb(var(--trooth-primary-400)) 0%, rgb(var(--trooth-primary-300)) 40.62%, rgb(var(--trooth-primary-200)) 79.69%);",
+        hero: "linear-gradient(67.1deg, rgb(var(--trooth-primary-100)) 0%, rgb(var(--trooth-primary-100) / .2) 100%);",
       },
     },
   },

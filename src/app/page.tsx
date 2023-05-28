@@ -1,9 +1,17 @@
-import { AppBar } from "../components/AppBar";
+import { type Metadata } from "next";
 
-export default function () {
+import { AppBar } from "@/components/AppBar";
+import { HomeHero } from "@/components/HomeHero";
+
+export const metadata: Metadata = {
+  title: "Trooth | Shop",
+};
+
+export default function() {
   return (
     <>
       <AppBar />
+      <HomeHero />
     </>
   );
 }

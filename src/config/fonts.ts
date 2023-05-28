@@ -21,6 +21,11 @@ export const nunitoSansRegular = Nunito_Sans({
   subsets: ["latin"],
 });
 
+export const nunitoSansMedium = Nunito_Sans({
+  weight: "600",
+  subsets: ["latin"],
+});
+
 export const comfortaaBoldAlt2 = localFont({
   src: "./assets/Comfortaa-Bold-Alt2.ttf",
 });

@@ -3,9 +3,43 @@
 @tailwind utilities;
 
 :root {
-  --trooth-primary-100: 235 240 245;
+  --trooth-primary-100: 235 245 243;
   --trooth-primary-200: 161 214 206;
   --trooth-primary-300: 120 192 189;
   --trooth-primary-400: 79 170 172;
   --trooth-primary-500: 39 148 155;
+
+  /* Stripe's hero title font stuff */
+  --title-font-min-size: 50;
+  --title-font-max-size: 78;
+  --viewport-min: 375;
+  --viewport-max: 600;
+  --title-font-size: calc(
+    var(--title-font-min-size) * 1px +
+      (var(--title-font-max-size) - var(--title-font-min-size)) *
+      (calc(100vw - 0px) - var(--viewport-min) * 1px) /
+      (var(--viewport-max) - var(--viewport-min))
+  );
+}
+
+/**
+ * We're just going to use this from Stripe because I like
+ * how their title is responsive. We will change it to go
+ * up to 96px instead of 94px, and adjust the viewport min
+ * and max.
+ */
+
+@media (min-width: 600px) {
+  :root {
+    --title-font-min-size: 60;
+    --title-font-max-size: 96;
+    --viewport-min: 600;
+    --viewport-max: 1080;
+  }
+}
+
+@media (min-width: 1080px) {
+  :root {
+    --title-font-size: 96px;
+  }
 }
