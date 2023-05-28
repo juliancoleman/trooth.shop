@@ -6,8 +6,8 @@ import { ScrollInformant } from "./ScrollInformant";
 
 export const HomeHero = () => (
   <section className="relative -mt-16 bg-hero">
-    <div className="mx-auto box-content flex h-[588px] max-w-[1080px] px-6 pb-28 sm:pt-32">
-      <article className="grid flex-1 gap-8 self-end">
+    <div className="mx-auto flex max-w-[1080px] px-6 pb-28 sm:pt-32">
+      <article className="grid h-[588px] flex-1 place-content-end gap-8">
         <h1
           className={cn(
             nunitoRegular.className,
@@ -38,7 +38,9 @@ export const HomeHero = () => (
         </div>
       </article>
 
-      <figure className="hidden flex-1 sm:block">placeholder image</figure>
+      <figure className="hidden flex-1 place-self-center justify-self-center text-center sm:block">
+        placeholder image
+      </figure>
     </div>
 
     <ScrollInformant className="absolute bottom-12 left-1/2 -translate-x-1/2" />

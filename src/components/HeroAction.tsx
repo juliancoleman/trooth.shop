@@ -20,7 +20,7 @@ export const HeroAction = (props: HeroActionProps) => (
     href={props.href}
     className={cn(
       nunitoSansMedium.className,
-      "group flex items-center gap-1.5 rounded-full py-[5px] pl-4 pr-3 transition-colors",
+      "group flex h-max items-center gap-1.5 rounded-full py-[5px] pl-4 pr-3 transition-colors",
       {
         "bg-[#333] text-white hover:bg-trooth-primary-500 hover:text-trooth-primary-100":
           props.variant === "primary",
