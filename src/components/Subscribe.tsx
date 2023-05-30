@@ -26,7 +26,7 @@ export const Subscribe = () => (
         <input
           className={cn(
             nunitoSansMedium.className,
-            "flex-1 rounded border-2 border-white bg-transparent px-3 py-2 text-base",
+            "flex-1 rounded border-2 border-white bg-transparent px-3 py-2 text-base placeholder:text-white",
           )}
           type="email"
           placeholder="Email address"

@@ -15,7 +15,7 @@ export const HomeHero = () => (
           )}
           style={{ fontSize: "var(--title-font-size)" }}
         >
-          The future of my foot in your ass.
+          Revitalize your smile, naturally.
         </h1>
 
         <p className={cn(nunitoSansRegular.className, "text-lg sm:text-xl")}>

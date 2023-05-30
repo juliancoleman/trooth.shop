@@ -16,6 +16,7 @@ export default function () {
       <AppBar />
       <HomeHero />
       <WhyTrooth />
+      {/* @ts-expect-error Async Server Component */}
       <Products />
       <Subscribe />
     </>
