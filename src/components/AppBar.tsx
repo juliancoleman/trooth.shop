@@ -1,7 +1,9 @@
 "use client";
 
+// TODO: implement cart feature when more than a handful of products
+
 import Link from "next/link";
-import { ShoppingCart } from "@phosphor-icons/react";
+// import { ShoppingCart } from "@phosphor-icons/react";
 import cn from "classnames";
 import { useState, useEffect } from "react";
 
@@ -67,7 +69,7 @@ export const AppBar = () => {
           </Link>
         </nav>
 
-        <ShoppingCart size={32} className="cursor-pointer" />
+        {/* <ShoppingCart size={32} className="cursor-pointer" /> */}
       </nav>
     </header>
   );

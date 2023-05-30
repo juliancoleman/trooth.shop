@@ -12,7 +12,7 @@ export const nunitoMedium = Nunito({
 });
 
 export const nunitoBold = Nunito({
-  weight: "800",
+  weight: "700",
   subsets: ["latin"],
 });
 
