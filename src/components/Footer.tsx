@@ -14,7 +14,7 @@ import { comfortaaBoldAlt2, nunitoBold, nunitoRegular } from "@/config/fonts";
 
 export const Footer = () => (
   <footer>
-    <div className="mx-auto grid max-w-[1080px] gap-12 px-6 py-12 sm:flex sm:justify-around">
+    <div className="mx-auto grid max-w-[1080px] gap-8 px-6 py-12 sm:flex sm:justify-around sm:gap-12">
       <div className="flex flex-col justify-between gap-4">
         <nav className="grid gap-3">
           <Link
@@ -88,8 +88,8 @@ export const Footer = () => (
             Support
           </Link>
 
-          <div className="flex gap-2">
-            <IconContext.Provider value={{ size: 32, className: "p-1.5" }}>
+          <div className="flex gap-4 sm:gap-2">
+            <IconContext.Provider value={{ size: 32, className: "sm:p-1.5" }}>
               <InstagramLogo />
               <LinkedinLogo />
               <TiktokLogo />
