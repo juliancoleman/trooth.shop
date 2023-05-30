@@ -1,7 +1,7 @@
 "use client";
 
 import cn from "classnames";
-import { ShoppingCart, CaretRight, ArrowRight } from "@phosphor-icons/react";
+import { CaretRight, ArrowRight } from "@phosphor-icons/react";
 import Link from "next/link";
 
 import { nunitoBold, nunitoSansRegular } from "@/config/fonts";
@@ -11,7 +11,6 @@ type ProductCardProps = {
   title: string;
   price: number;
   routePath: string;
-  onAddToCart(): void;
 };
 
 export const ProductCard = (props: ProductCardProps) => (
@@ -26,9 +25,7 @@ export const ProductCard = (props: ProductCardProps) => (
       {dollarFormatter.format(props.price / 100)}
     </p>
 
-    <div className="flex gap-3">
-      <AddToCardAction />
-
+    <div className="flex justify-center gap-3">
       {props.routePath != null ? (
         <Link
           href={props.routePath}
@@ -52,16 +49,4 @@ export const ProductCard = (props: ProductCardProps) => (
       ) : null}
     </div>
   </div>
-);
-
-const AddToCardAction = () => (
-  <button
-    className={cn(
-      nunitoSansRegular.className,
-      "flex items-center gap-2 rounded-full bg-[#333] px-4 py-[5px] text-base text-trooth-primary-100",
-    )}
-  >
-    Add to Cart
-    <ShoppingCart size={16} />
-  </button>
 );

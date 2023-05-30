@@ -12,7 +12,6 @@ export const ProductsList = ({ products }: { products: Stripe.Product[] }) => (
         title={product.name}
         price={(product.default_price as Stripe.Price).unit_amount}
         routePath={product.metadata.path}
-        onAddToCart={() => console.warn("Unimplemented: onAddToCart()")}
       />
     ))}
   </>

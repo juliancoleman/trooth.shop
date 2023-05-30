@@ -58,7 +58,10 @@ export const AppBar = () => {
         </Link>
 
         <nav className="hidden gap-2 sm:flex">
-          <Link href="/subscriptions" className={baseLinkClass}>
+          <Link
+            href={process.env.NEXT_PUBLIC_STRIPE_CUSTOMER_PORTAL_URL}
+            className={baseLinkClass}
+          >
             Subscriptions
           </Link>
           <Link href="/mission" className={baseLinkClass}>

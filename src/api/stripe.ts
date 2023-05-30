@@ -2,6 +2,9 @@ import { type Stripe } from "stripe";
 
 import { stripe } from "@/config/stripe";
 
+/**
+ * Product API methods
+ */
 export async function getProducts() {
   return stripe.products.list();
 }
@@ -18,3 +21,10 @@ export const productsWithPrices = async (product: Stripe.Product) => {
 
   return product;
 };
+
+/**
+ * Payment Link API methods
+ */
+export function getPaymentLinks() {
+  return stripe.paymentLinks.list();
+}
