@@ -32,15 +32,46 @@ export const ToothPowderHero = ({
   }, [variant]);
 
   return (
-    <section className="-mt-16 h-screen bg-hero-dark">
-      <header className="sticky top-16 mx-auto flex max-w-[1080px] items-center justify-between px-6 py-3 text-white">
+    <section className={cn("-mt-16 h-screen")}>
+      {/* dark hero bg */}
+      <div
+        className={cn(
+          "absolute inset-0 h-screen w-full bg-hero-dark transition-opacity",
+          {
+            "opacity-0": variant === "onlight",
+            "opacity-100": variant === "ondark",
+          },
+        )}
+      />
+
+      {/* light hero bg */}
+      <div
+        className={cn(
+          "absolute inset-0 h-screen w-full bg-hero-light transition-opacity",
+          {
+            "opacity-0": variant === "ondark",
+            "opacity-100": variant === "onlight",
+          },
+        )}
+      />
+      <header
+        className={cn(
+          "sticky top-16 mx-auto flex max-w-[1080px] items-center justify-between px-6 py-3 transition-colors",
+          {
+            "text-white": variant === "ondark",
+            "text-[#333]": variant === "onlight",
+          },
+        )}
+      >
         <h1 className={cn(nunitoSansBold.className, "text-base")}>
           Charcoal Tooth Powder
         </h1>
 
         <form>
           <fieldset>
-            <legend className="invisible">Please choose a flavor</legend>
+            <legend className="absolute m-0 h-px w-px overflow-hidden p-0">
+              Please choose a flavor
+            </legend>
             <div className="flex gap-3">
               <label htmlFor="ondark">
                 <input
@@ -49,13 +80,16 @@ export const ToothPowderHero = ({
                   name="theme"
                   id="ondark"
                   value="ondark"
+                  className="aspect-square w-4 cursor-pointer appearance-none rounded-full bg-[#555] checked:ring-2 checked:ring-black checked:ring-opacity-25"
                   onChange={({ target }) => {
                     if (target.checked) {
                       handleChange("ondark");
                     }
                   }}
                 />
-                <span>Original</span>
+                <span className="absolute m-0 h-px w-px overflow-hidden p-0">
+                  Original
+                </span>
               </label>
 
               <label htmlFor="onlight">
@@ -65,13 +99,16 @@ export const ToothPowderHero = ({
                   name="theme"
                   id="onlight"
                   value="onlight"
+                  className="aspect-square w-4 cursor-pointer appearance-none rounded-full bg-trooth-primary-400 checked:ring-2 checked:ring-black checked:ring-opacity-25"
                   onChange={({ target }) => {
                     if (target.checked) {
                       handleChange("onlight");
                     }
                   }}
                 />
-                <span>Spearmint</span>
+                <span className="absolute m-0 h-px w-px overflow-hidden p-0">
+                  Spearmint
+                </span>
               </label>
             </div>
           </fieldset>

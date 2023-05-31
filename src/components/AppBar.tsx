@@ -60,10 +60,11 @@ export const AppBar = ({ variant = "default" }: AppBarProps) => {
           href="/"
           className={cn(
             comfortaaBoldAlt2.className,
-            "text-2xl tracking-tight",
+            "text-2xl tracking-tight transition-colors",
             "bg-clip-text text-transparent",
             {
               "bg-logo-color": variant === "default" || variant === "ondark",
+              "bg-logo-grayscale": variant === "onlight",
             },
           )}
         >

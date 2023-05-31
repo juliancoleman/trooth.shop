@@ -22,8 +22,11 @@ module.exports = {
       backgroundImage: {
         "logo-color":
           "linear-gradient(90deg, rgb(var(--trooth-primary-400)) 0%, rgb(var(--trooth-primary-300)) 40.62%, rgb(var(--trooth-primary-200)) 79.69%);",
+        "logo-grayscale": "linear-gradient(90deg, #333333 0%, #777777 77%)",
         hero: "linear-gradient(67.1deg, rgb(var(--trooth-primary-100)) 0%, rgb(var(--trooth-primary-100) / .2) 100%);",
         "hero-dark": "linear-gradient(180deg, #555555 0%, #333333 100%)",
+        "hero-light":
+          "linear-gradient(180deg, rgb(var(--trooth-primary-200)) 0%, rgb(var(--trooth-primary-300)) 100%)",
       },
     },
   },
