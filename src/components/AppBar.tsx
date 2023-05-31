@@ -9,12 +9,22 @@ import { useState, useEffect } from "react";
 
 import { comfortaaBoldAlt2, nunitoSansRegular } from "@/config/fonts";
 
-const baseLinkClass = cn(
-  nunitoSansRegular.className,
-  "rounded-full p-3.5 text-base leading-none text-trooth-primary-500 hover:bg-white",
-);
+type AppBarProps = {
+  variant?: "default" | "ondark" | "onlight";
+};
 
-export const AppBar = () => {
+export const AppBar = ({ variant = "default" }: AppBarProps) => {
+  const baseLinkClass = cn(
+    nunitoSansRegular.className,
+    "rounded-full p-3.5 text-base leading-none transition-colors",
+    {
+      "text-trooth-primary-500 hover:bg-white":
+        variant === "default" || variant === "onlight",
+      "text-trooth-primary-100 hover:bg-trooth-primary-500":
+        variant === "ondark",
+    },
+  );
+
   const [hasScrolled, setHasScrolled] = useState(
     typeof window !== "undefined" && window.scrollY > 0,
   );
@@ -51,7 +61,10 @@ export const AppBar = () => {
           className={cn(
             comfortaaBoldAlt2.className,
             "text-2xl tracking-tight",
-            "bg-logo-color bg-clip-text text-transparent",
+            "bg-clip-text text-transparent",
+            {
+              "bg-logo-color": variant === "default" || variant === "ondark",
+            },
           )}
         >
           trooth

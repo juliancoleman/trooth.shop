@@ -1,7 +1,7 @@
 "use client";
 
 import cn from "classnames";
-import { Megaphone, GlobeSimple, Handshake } from "@phosphor-icons/react";
+import { EggCrack, GlobeSimple, Handshake } from "@phosphor-icons/react";
 
 import { nunitoMedium, nunitoSansMedium } from "@/config/fonts";
 import { ValueProp } from "./ValueProp";
@@ -24,7 +24,7 @@ export const WhyTrooth = () => (
 
     <div className="grid gap-6 md:flex">
       <ValueProp
-        icon={<Megaphone />}
+        icon={<EggCrack />}
         title="Ingredients safe enough to eat"
         description="Discover the perfect balance of effectiveness and edibility. Our products deliver impressive results without compromising on your safety or peace of mind."
       />

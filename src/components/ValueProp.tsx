@@ -11,7 +11,7 @@ type ValuePropProps = {
 };
 
 export const ValueProp = (props: ValuePropProps) => (
-  <article className="grid flex-1 gap-4 p-3 h-max">
+  <article className="grid h-max flex-1 gap-4 py-3 sm:px-3">
     <IconContext.Provider
       value={{
         size: 32,
