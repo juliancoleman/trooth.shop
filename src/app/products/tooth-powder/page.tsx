@@ -5,7 +5,7 @@ import { useCallback, useState } from "react";
 import { AppBar } from "@/components/AppBar";
 import { ToothPowderHero } from "@/components/ToothPowderHero";
 
-export default function () {
+export default function() {
   const [theme, setTheme] = useState<"ondark" | "onlight">("ondark");
 
   const handleChangeTheme = useCallback((t: "ondark" | "onlight") => {
