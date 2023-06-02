@@ -47,8 +47,9 @@ export const AppBar = ({ variant = "default" }: AppBarProps) => {
 
   return (
     <header
-      className={cn("relative top-0 z-10 transition-all sm:sticky", {
-        "sm:bg-white sm:bg-opacity-100 sm:shadow-sm": hasScrolled,
+      className={cn("relative top-0 z-10 transition-all", {
+        "sm:sticky sm:bg-white sm:bg-opacity-100 sm:shadow-sm":
+          hasScrolled && variant === "default",
       })}
     >
       <nav

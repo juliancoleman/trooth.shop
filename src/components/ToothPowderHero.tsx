@@ -4,6 +4,7 @@ import cn from "classnames";
 import { useEffect, useRef } from "react";
 
 import { nunitoSansBold } from "@/config/fonts";
+import { HeroAction } from "./HeroAction";
 
 type ToothPowderHeroProps = {
   variant: "onlight" | "ondark";
@@ -11,7 +12,7 @@ type ToothPowderHeroProps = {
 };
 
 export const ToothPowderHero = ({
-  variant,
+  variant = "ondark",
   handleChange,
 }: ToothPowderHeroProps) => {
   const darkRef = useRef<HTMLInputElement>(null);
@@ -32,7 +33,7 @@ export const ToothPowderHero = ({
   }, [variant]);
 
   return (
-    <section className={cn("-mt-16 h-screen")}>
+    <section className={cn("-mt-16 h-[calc(100vh_-_64px)]")}>
       {/* dark hero bg */}
       <div
         className={cn(
@@ -56,18 +57,26 @@ export const ToothPowderHero = ({
       />
       <header
         className={cn(
-          "sticky top-16 mx-auto flex max-w-[1080px] items-center justify-between px-6 py-3 transition-colors",
+          "sticky top-0 mx-auto mt-16 max-w-[1080px] transition-colors",
           {
             "text-white": variant === "ondark",
             "text-[#333]": variant === "onlight",
           },
         )}
       >
-        <h1 className={cn(nunitoSansBold.className, "text-base")}>
-          Charcoal Tooth Powder
-        </h1>
+        <div className="flex items-center justify-between px-6 py-3">
+          <h1 className={cn(nunitoSansBold.className, "text-base")}>
+            Charcoal Tooth Powder
+          </h1>
 
-        <form>
+          <nav className="flex items-center gap-3">
+            <HeroAction variant="primary" size="sm" href="#">
+              Buy now
+            </HeroAction>
+          </nav>
+        </div>
+
+        <form className="flex justify-end p-6">
           <fieldset>
             <legend className="absolute m-0 h-px w-px overflow-hidden p-0">
               Please choose a flavor
@@ -80,7 +89,7 @@ export const ToothPowderHero = ({
                   name="theme"
                   id="ondark"
                   value="ondark"
-                  className="aspect-square w-4 cursor-pointer appearance-none rounded-full bg-[#555] checked:ring-2 checked:ring-black checked:ring-opacity-25"
+                  className="aspect-square w-5 cursor-pointer appearance-none rounded-full bg-[#555] checked:ring-2 checked:ring-black checked:ring-opacity-25"
                   onChange={({ target }) => {
                     if (target.checked) {
                       handleChange("ondark");
@@ -99,7 +108,7 @@ export const ToothPowderHero = ({
                   name="theme"
                   id="onlight"
                   value="onlight"
-                  className="aspect-square w-4 cursor-pointer appearance-none rounded-full bg-trooth-primary-400 checked:ring-2 checked:ring-black checked:ring-opacity-25"
+                  className="aspect-square w-5 cursor-pointer appearance-none rounded-full bg-trooth-primary-400 checked:ring-2 checked:ring-black checked:ring-opacity-25"
                   onChange={({ target }) => {
                     if (target.checked) {
                       handleChange("onlight");
