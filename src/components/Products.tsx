@@ -10,7 +10,7 @@ export const Products = async () => {
   products = await Promise.all(products.map(productsWithPrices));
 
   return (
-    <section className="bg-[#fafafa]">
+    <section className="bg-[#fafafa]" id="products">
       <div className="mx-auto grid max-w-[1080px] gap-11 px-6 py-24">
         <h2 className={cn(nunitoMedium.className, "text-5xl")}>Our Products</h2>
         <div className="grid gap-11 sm:grid-cols-3">

@@ -26,11 +26,11 @@ export const HomeHero = () => (
 
         <div className="flex gap-3 pb-4">
           <HeroAction
-            href="/products/tooth-powder"
+            href="#products"
             variant="primary"
             size="default"
           >
-            Buy now
+            Shop
           </HeroAction>
           <HeroAction href="/mission" variant="secondary" size="default">
             Learn more

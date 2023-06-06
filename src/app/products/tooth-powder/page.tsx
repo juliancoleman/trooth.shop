@@ -1,22 +1,17 @@
-"use client";
-
-import { useCallback, useState } from "react";
-
 import { AppBar } from "@/components/AppBar";
 import { ToothPowderHero } from "@/components/ToothPowderHero";
 import { Footer } from "@/components/Footer";
+import { ToothPowderFeatures } from "@/components/ToothPowderFeatures";
 
-export default function () {
-  const [theme, setTheme] = useState<"ondark" | "onlight">("ondark");
-
-  const handleChangeTheme = useCallback((t: "ondark" | "onlight") => {
-    setTheme(t);
-  }, []);
+export default function() {
+  // theme is always "ondark" for the OG charcoal tooth powder.
+  const variant = "ondark";
 
   return (
     <>
-      <AppBar variant={theme} />
-      <ToothPowderHero variant={theme} handleChange={handleChangeTheme} />
+      <AppBar variant={variant} />
+      <ToothPowderHero variant={variant} />
+      <ToothPowderFeatures />
       <Footer />
     </>
   );

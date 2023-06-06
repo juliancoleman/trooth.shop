@@ -29,7 +29,7 @@ export const Footer = () => (
           </Link>
         </nav>
 
-        <p className={(nunitoRegular.className, "text-base")}>
+        <p className={cn(nunitoRegular.className, "text-base")}>
           &copy; {new Date().getFullYear()} Trooth
         </p>
       </div>
@@ -40,13 +40,19 @@ export const Footer = () => (
           href="/products/tooth-powder"
           className={cn(nunitoRegular.className, "text-base")}
         >
-          Tooth Powder
+          Charcoal Tooth Powder
+        </Link>
+        <Link
+          href="/products/tooth-powder"
+          className={cn(nunitoRegular.className, "text-base")}
+        >
+          Spearmint Tooth Powder
         </Link>
         <Link
           href="/products/mouth-rinse"
           className={cn(nunitoRegular.className, "text-base")}
         >
-          Mouth Rinse
+          Spearmint Mouth Rinse
         </Link>
       </nav>
 
