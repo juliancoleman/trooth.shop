@@ -7,12 +7,7 @@ import { nunitoSansBold, nunitoSansRegular } from "@/config/fonts";
 
 export const ToothPowderFeatures = () => (
   <FeatureGrid className="bg-[#333]" id="overview">
-    <GridTile className="grid place-content-center gap-24 text-center sm:col-span-2 sm:row-span-2">
-      <p className={cn(nunitoSansRegular.className, "text-xl")}>
-        Non-toxic. Fluoride-free.
-        <br />
-        All-natural ingredients.
-      </p>
+    <GridTile className="grid place-content-center gap-16 text-center sm:col-span-2 sm:row-span-2">
       <p
         className={cn(
           nunitoSansBold.className,
@@ -20,9 +15,16 @@ export const ToothPowderFeatures = () => (
         )}
       >
         Perfectly edible.
+        <br />
+        Perfectly sustainable.
+      </p>
+      <p className={cn(nunitoSansRegular.className, "text-xl")}>
+        Nontoxic. No Fluoride. No SLS.
+        <br />
+        Only 5 all-natural ingredients.
       </p>
     </GridTile>
-    <GridTile className="aspect-square">
+    <GridTile className="group flex aspect-video flex-col justify-between">
       <Image
         src="/images/eggshells.jpeg"
         height={640}
@@ -38,17 +40,23 @@ export const ToothPowderFeatures = () => (
       >
         Loaded with minerals.
       </p>
+      <figure className="absolute inset-0 z-10 flex items-end bg-gradient-to-t from-[rgb(0_0_0_/_0.75)] to-transparent p-4 text-xs opacity-0 transition-all group-hover:opacity-100">
+        <aside className="translate-y-full transform-gpu transition-transform group-hover:translate-y-0">
+          Specially crafted with calcium, phosphorus, and magnesium to help
+          rebuild enamel and increase overall tooth health.
+        </aside>
+      </figure>
     </GridTile>
-    <GridTile className="aspect-square">
+    <GridTile className="aspect-video">
       <p className={cn(nunitoSansBold.className, "text-xl")}>
         Bad breath. Gone.
       </p>
     </GridTile>
-    <GridTile className="grid gap-6">
+    <GridTile className="grid gap-10">
       <p className={cn(nunitoSansBold.className, "text-xl")}>
         Lasts up to 9 months. <sup className="text-xs">1</sup>
       </p>
-      <div className="grid gap-5">
+      <div className="ml-3 grid gap-5">
         <div className="grid gap-3">
           <label htmlFor="trooth">Trooth</label>
           <div id="trooth" className="h-3 w-[90%] rounded-full bg-logo-color" />
@@ -70,7 +78,7 @@ export const ToothPowderFeatures = () => (
     </GridTile>
     <GridTile className="sm:col-span-2">
       <p className={cn(nunitoSansBold.className, "text-xl")}>
-        Fights plaque and reverses gingivitis.
+        Revitalizes tooth and gum health.
       </p>
     </GridTile>
     <GridTile className="grid gap-16 sm:col-span-2">
