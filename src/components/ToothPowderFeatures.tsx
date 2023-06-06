@@ -7,7 +7,7 @@ import { nunitoSansBold, nunitoSansRegular } from "@/config/fonts";
 
 export const ToothPowderFeatures = () => (
   <FeatureGrid className="bg-[#333]" id="overview">
-    <GridTile className="col-span-2 row-span-2 grid place-content-center gap-24 text-center">
+    <GridTile className="grid place-content-center gap-24 text-center sm:col-span-2 sm:row-span-2">
       <p className={cn(nunitoSansRegular.className, "text-xl")}>
         Non-toxic. Fluoride-free.
         <br />
@@ -68,12 +68,12 @@ export const ToothPowderFeatures = () => (
         typical 3.4oz tube of toothpaste.
       </p>
     </GridTile>
-    <GridTile className="col-span-2">
+    <GridTile className="sm:col-span-2">
       <p className={cn(nunitoSansBold.className, "text-xl")}>
         Fights plaque and reverses gingivitis.
       </p>
     </GridTile>
-    <GridTile className="col-span-2 grid gap-16">
+    <GridTile className="grid gap-16 sm:col-span-2">
       <p
         className={cn(
           nunitoSansRegular.className,
