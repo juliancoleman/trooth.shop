@@ -26,7 +26,7 @@ export const ToothPowderFeatures = () => (
     </GridTile>
     <GridTile className="group flex aspect-video flex-col justify-between">
       <Image
-        src="/images/eggshells.jpeg"
+        src="/images/eggshells-no-bg.png"
         height={640}
         width={486}
         alt="Eggshells - Minerals"
@@ -42,17 +42,17 @@ export const ToothPowderFeatures = () => (
       </p>
       <figure className="absolute inset-0 z-10 flex items-end bg-gradient-to-t from-[rgb(0_0_0_/_0.75)] to-transparent p-4 text-xs opacity-0 transition-all group-hover:opacity-100">
         <aside className="translate-y-full transform-gpu transition-transform group-hover:translate-y-0">
-          Specially crafted with calcium, phosphorus, and magnesium to help
-          rebuild enamel and increase overall tooth health.
+          Calcium, phosphorus, magnesium, and zinc play a critical role in bone
+          health and help rebuild and remineralize tooth enamel.
         </aside>
       </figure>
     </GridTile>
     <GridTile className="aspect-video">
       <p className={cn(nunitoSansBold.className, "text-xl")}>
-        Bad breath. Gone.
+        Finely ground for enamel protection.
       </p>
     </GridTile>
-    <GridTile className="grid gap-10">
+    <GridTile className="grid gap-10 bg-black bg-opacity-100">
       <p className={cn(nunitoSansBold.className, "text-xl")}>
         Lasts up to 9 months. <sup className="text-xs">1</sup>
       </p>
@@ -78,7 +78,7 @@ export const ToothPowderFeatures = () => (
     </GridTile>
     <GridTile className="sm:col-span-2">
       <p className={cn(nunitoSansBold.className, "text-xl")}>
-        Revitalizes tooth and gum health.
+        Protects against plaque, bad breath, and gingivitis.
       </p>
     </GridTile>
     <GridTile className="grid gap-16 sm:col-span-2">
@@ -101,7 +101,7 @@ export const ToothPowderFeatures = () => (
     </GridTile>
     <GridTile className="grid gap-16">
       <p className={cn(nunitoSansBold.className, "text-center text-xl")}>
-        Whitens teeth
+        Yes... It whitens teeth
       </p>
     </GridTile>
   </FeatureGrid>
