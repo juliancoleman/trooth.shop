@@ -49,14 +49,14 @@ export const ToothPowderFeatures = () => (
     </GridTile>
     <GridTile className="aspect-video">
       <p className={cn(nunitoSansBold.className, "text-xl")}>
-        Finely ground for enamel protection.
+        Ultra finely ground for enamel protection.
       </p>
     </GridTile>
     <GridTile className="grid gap-10 bg-black bg-opacity-100">
       <p className={cn(nunitoSansBold.className, "text-xl")}>
         Lasts up to 9 months. <sup className="text-xs">1</sup>
       </p>
-      <div className="ml-3 grid gap-5">
+      <div className="mx-3 grid gap-5">
         <div className="grid gap-3">
           <label htmlFor="trooth">Trooth</label>
           <div id="trooth" className="h-3 w-[90%] rounded-full bg-logo-color" />
@@ -101,7 +101,7 @@ export const ToothPowderFeatures = () => (
     </GridTile>
     <GridTile className="grid gap-16">
       <p className={cn(nunitoSansBold.className, "text-center text-xl")}>
-        Yes... It whitens teeth
+        Brighten teeth with every brush.
       </p>
     </GridTile>
   </FeatureGrid>
