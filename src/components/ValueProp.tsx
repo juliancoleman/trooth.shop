@@ -5,9 +5,10 @@ import { IconContext } from "@phosphor-icons/react";
 import { nunitoBold, nunitoSansRegular } from "@/config/fonts";
 
 type ValuePropProps = {
-  icon: ReactNode;
+  icon?: ReactNode;
   title: string;
   description: string;
+  variant?: "ondark" | "onlight";
 };
 
 export const ValueProp = (props: ValuePropProps) => (
@@ -19,12 +20,20 @@ export const ValueProp = (props: ValuePropProps) => (
         weight: "duotone",
       }}
     >
-      {props.icon}
+      {props.icon ?? null}
     </IconContext.Provider>
-    <header className={cn(nunitoBold.className, "text-base")}>
+    <header
+      className={cn(nunitoBold.className, "text-base", {
+        "text-trooth-primary-100": props.variant === "onlight",
+      })}
+    >
       {props.title}
     </header>
-    <p className={cn(nunitoSansRegular.className, "text-base")}>
+    <p
+      className={cn(nunitoSansRegular.className, "text-base", {
+        "text-trooth-primary-200": props.variant === "onlight",
+      })}
+    >
       {props.description}
     </p>
   </article>

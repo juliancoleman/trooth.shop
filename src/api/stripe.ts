@@ -8,6 +8,9 @@ import { stripe } from "@/config/stripe";
 export async function getProducts() {
   return stripe.products.list();
 }
+export async function getProduct(productId: string) {
+  return stripe.products.retrieve(productId);
+}
 
 export async function getProductDefaultPrice(priceId: string) {
   return stripe.prices.retrieve(priceId);

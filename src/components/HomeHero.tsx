@@ -19,17 +19,13 @@ export const HomeHero = () => (
         </h1>
 
         <p className={cn(nunitoSansRegular.className, "text-lg sm:text-xl")}>
-          Our tooth powder is the ultimate non-toxic and fluoride-free oral
-          health solution. Fight plaque, bad breath, and gingivitis, while
-          rebuilding enamel for a healthier, brighter smile.
+          Our products are the ultimate non-toxic and fluoride-free oral health
+          solution. Fight plaque, bad breath, and gingivitis, while rebuilding
+          enamel for a healthier, brighter smile.
         </p>
 
         <div className="flex gap-3 pb-4">
-          <HeroAction
-            href="#products"
-            variant="primary"
-            size="default"
-          >
+          <HeroAction href="#products" variant="primary" size="default">
             Shop
           </HeroAction>
           <HeroAction href="/mission" variant="secondary" size="default">

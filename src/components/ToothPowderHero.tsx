@@ -1,57 +1,54 @@
+import Stripe from "stripe";
 import cn from "classnames";
+import Link from "next/link";
 
-import { nunitoSansBold } from "@/config/fonts";
-import { HeroAction } from "./HeroAction";
-import { ProductAction } from "./ProductAction";
+import { dollarFormatter } from "@/utils/intl";
+import { nunitoBold, nunitoSansRegular } from "@/config/fonts";
 
 type ToothPowderHeroProps = {
-  variant: "onlight" | "ondark";
+  product: Stripe.Product;
+  defaultPaymentLink: string;
 };
 
-function renderHero(type: ToothPowderHeroProps["variant"]) {
-  switch (type) {
-    case "onlight":
-      return <div className="absolute inset-0 h-[80vh] w-full bg-hero-light" />;
-    case "ondark":
-      return <div className="absolute inset-0 h-[80vh] w-full bg-hero-dark" />;
-  }
+function ProductInfo({ product, defaultPaymentLink }: ToothPowderHeroProps) {
+  return (
+    <aside className="grid gap-2.5 rounded-lg bg-hero-light p-8 text-[#333] backdrop-blur-sm">
+      <p className={cn(nunitoBold.className, "text-2xl")}>{product.name}</p>
+      <p className={cn(nunitoSansRegular.className, "text-sm")}>
+        {product.metadata.shortDescription}
+      </p>
+      <p className="mb-4 text-2xl">
+        {dollarFormatter.format(
+          (product.default_price as Stripe.Price).unit_amount / 100,
+        )}
+        <sup className="text-xs">.00</sup>
+      </p>
+      <Link
+        href={defaultPaymentLink ?? ""}
+        className="rounded-full bg-logo-grayscale py-[5px] pl-4 pr-3 text-center text-white"
+      >
+        Buy now
+      </Link>
+      <p className="text-xs opacity-50">
+        Tax and shipping calculated at checkout.
+      </p>
+    </aside>
+  );
 }
 
 export const ToothPowderHero = ({
-  variant = "ondark",
+  product,
+  defaultPaymentLink,
 }: ToothPowderHeroProps) => (
   <section className={cn("-mt-16 h-[calc(80vh_-_64px)]")}>
-    {renderHero(variant)}
-
-    <header
-      className={cn(
-        "sticky top-0 mx-auto mt-16 max-w-[1080px] transition-colors",
-        {
-          "text-white": variant === "ondark",
-          "text-[#333]": variant === "onlight",
-        },
-      )}
-    >
-      <div className="flex items-center justify-between px-6 py-3">
-        <h1 className={cn(nunitoSansBold.className, "text-base")}>
-          Charcoal Tooth Powder
-        </h1>
-
-        <nav className="flex items-center gap-3">
-          <ProductAction variant={variant} href="#overview">
-            Overview
-          </ProductAction>
-          <ProductAction variant={variant} href="#ingredients">
-            Ingredients
-          </ProductAction>
-          <ProductAction variant={variant} href="#how-to-use">
-            How to use
-          </ProductAction>
-          <HeroAction variant="primary" size="sm" href="#">
-            Buy now
-          </HeroAction>
-        </nav>
-      </div>
-    </header>
+    <div className="absolute inset-0 h-[80vh] w-full bg-hero-dark pt-48">
+      <section className="mx-auto grid max-w-[1080px] grid-cols-[2.5fr_1fr] px-6">
+        <div />
+        <ProductInfo
+          product={product}
+          defaultPaymentLink={defaultPaymentLink}
+        />
+      </section>
+    </div>
   </section>
 );
