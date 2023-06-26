@@ -16,7 +16,10 @@ export const ValueProp = (props: ValuePropProps) => (
     <IconContext.Provider
       value={{
         size: 32,
-        color: "rgb(var(--trooth-primary-500))",
+        color:
+          props.variant === "onlight"
+            ? "rgb(var(--trooth-primary-200))"
+            : "rgb(var(--trooth-primary-500))",
         weight: "duotone",
       }}
     >
