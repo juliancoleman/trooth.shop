@@ -1,6 +1,6 @@
 import cn from "classnames";
 
-import { nunitoMedium, nunitoSansRegular, nunitoRegular } from "@/config/fonts";
+import { nunitoBold, nunitoMedium, nunitoRegular } from "@/config/fonts";
 
 export function ToothPowderIngredients() {
   return (
@@ -31,7 +31,7 @@ export function ToothPowderIngredients() {
         <div className="grid grid-cols-2">
           <p
             className={cn(
-              nunitoSansRegular.className,
+              nunitoBold.className,
               "text-base text-trooth-primary-100",
             )}
           >
@@ -40,7 +40,7 @@ export function ToothPowderIngredients() {
           <p
             className={cn(
               nunitoRegular.className,
-              "text-base text-trooth-primary-100",
+              "text-base text-trooth-primary-100 opacity-70",
             )}
           >
             Rich in calcium and other minerals. Remineralizes teeth and rebuilds
@@ -51,7 +51,7 @@ export function ToothPowderIngredients() {
         <div className="grid grid-cols-2">
           <p
             className={cn(
-              nunitoSansRegular.className,
+              nunitoBold.className,
               "text-base text-trooth-primary-100",
             )}
           >
@@ -60,7 +60,7 @@ export function ToothPowderIngredients() {
           <p
             className={cn(
               nunitoRegular.className,
-              "text-base text-trooth-primary-100",
+              "text-base text-trooth-primary-100 opacity-70",
             )}
           >
             Removes surface stains, prevents plaque build-up, kills bad
@@ -71,7 +71,7 @@ export function ToothPowderIngredients() {
         <div className="grid grid-cols-2">
           <p
             className={cn(
-              nunitoSansRegular.className,
+              nunitoBold.className,
               "text-base text-trooth-primary-100",
             )}
           >
@@ -80,7 +80,7 @@ export function ToothPowderIngredients() {
           <p
             className={cn(
               nunitoRegular.className,
-              "text-base text-trooth-primary-100",
+              "text-base text-trooth-primary-100 opacity-70",
             )}
           >
             Balances the delicate oral pH, remineralizes teeth, prevents tooth
@@ -91,7 +91,7 @@ export function ToothPowderIngredients() {
         <div className="grid grid-cols-2">
           <p
             className={cn(
-              nunitoSansRegular.className,
+              nunitoBold.className,
               "text-base text-trooth-primary-100",
             )}
           >
@@ -100,7 +100,7 @@ export function ToothPowderIngredients() {
           <p
             className={cn(
               nunitoRegular.className,
-              "text-base text-trooth-primary-100",
+              "text-base text-trooth-primary-100 opacity-70",
             )}
           >
             All that calcium can't work without phosphorus. It is an essential
@@ -112,7 +112,7 @@ export function ToothPowderIngredients() {
         <div className="grid grid-cols-2">
           <p
             className={cn(
-              nunitoSansRegular.className,
+              nunitoBold.className,
               "text-base text-trooth-primary-100",
             )}
           >
@@ -121,7 +121,7 @@ export function ToothPowderIngredients() {
           <p
             className={cn(
               nunitoRegular.className,
-              "text-base text-trooth-primary-100",
+              "text-base text-trooth-primary-100 opacity-70",
             )}
           >
             Cuts through bacteria like butter. In conjunction with coconut

@@ -10,7 +10,7 @@ import {
 import { ValueProp } from "./ValueProp";
 
 export const ToothPowderFeatures = () => (
-  <section className="bg-[#333] px-6" id="overview">
+  <section className="bg-[#333] px-6 py-24" id="overview">
     <div className="mx-auto mb-10 grid max-w-[1080px] gap-6 md:grid-cols-3">
       <ValueProp
         icon={<Grains />}
