@@ -4,8 +4,9 @@ import { Footer } from "@/components/Footer";
 import { ToothPowderFeatures } from "@/components/ToothPowderFeatures";
 import { getPaymentLinks, getProduct, productsWithPrices } from "@/api/stripe";
 import { ProductHeader } from "@/components/ProductHeader";
+import { ToothPowderIngredients } from "@/components/ToothPowderIngredients";
 
-export default async function () {
+export default async function() {
   // theme is always "ondark" for the OG charcoal tooth powder.
   const variant = "ondark";
 
@@ -35,6 +36,7 @@ export default async function () {
         defaultPaymentLink={defaultPaymentLink}
       />
       <ToothPowderFeatures />
+      <ToothPowderIngredients />
       <Footer />
     </>
   );
