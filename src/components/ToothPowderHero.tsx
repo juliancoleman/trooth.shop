@@ -40,9 +40,9 @@ export const ToothPowderHero = ({
   product,
   defaultPaymentLink,
 }: ToothPowderHeroProps) => (
-  <section className={cn("-mt-16 h-[calc(80vh_-_64px)]")}>
-    <div className="absolute inset-0 h-[80vh] w-full bg-hero-dark pt-48">
-      <section className="mx-auto grid max-w-[1080px] grid-cols-[2.5fr_1fr] px-6">
+  <section className={cn("-mt-16 md:h-[calc(80vh_-_64px)]")}>
+    <div className="-mt-32 w-full bg-hero-dark pt-48 md:absolute md:inset-0 md:mt-0 md:h-[80vh]">
+      <section className="mx-auto grid max-w-[1080px] px-6 pb-24 md:grid-cols-[2.5fr_1fr]">
         <div />
         <ProductInfo
           product={product}
