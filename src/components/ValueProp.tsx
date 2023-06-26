@@ -24,14 +24,14 @@ export const ValueProp = (props: ValuePropProps) => (
     </IconContext.Provider>
     <header
       className={cn(nunitoBold.className, "text-base", {
-        "text-trooth-primary-100": props.variant === "onlight",
+        "text-trooth-primary-200": props.variant === "onlight",
       })}
     >
       {props.title}
     </header>
     <p
       className={cn(nunitoSansRegular.className, "text-base", {
-        "text-trooth-primary-200": props.variant === "onlight",
+        "text-trooth-primary-100": props.variant === "onlight",
       })}
     >
       {props.description}
