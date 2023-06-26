@@ -25,7 +25,7 @@ function ProductInfo({ product, defaultPaymentLink }: ToothPowderHeroProps) {
       </p>
       <Link
         href={defaultPaymentLink ?? ""}
-        className="rounded-full bg-logo-grayscale py-[5px] pl-4 pr-3 text-center text-white"
+        className="rounded-full bg-[#333] py-[5px] pl-4 pr-3 text-center text-white"
       >
         Buy now
       </Link>
