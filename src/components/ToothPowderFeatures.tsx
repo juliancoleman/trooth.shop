@@ -10,7 +10,7 @@ import {
 
 import { ValueProp } from "./ValueProp";
 
-const featureClasses = "bg-white/10 rounded-md !h-full auto-rows-max sm:py-4 sm:px-6";
+const featureClasses = "bg-white/5 rounded-md !h-full auto-rows-max sm:py-4 sm:px-6";
 
 export const ToothPowderFeatures = () => (
   <section className="bg-[#333] px-6 py-24" id="overview">
