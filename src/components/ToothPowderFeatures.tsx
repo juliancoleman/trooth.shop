@@ -1,4 +1,5 @@
 "use client";
+
 import {
   Grains,
   Plant,
@@ -9,6 +10,8 @@ import {
 
 import { ValueProp } from "./ValueProp";
 
+const featureClasses = "bg-white/10 rounded-md h-full auto-rows-max sm:py-4 sm:px-6";
+
 export const ToothPowderFeatures = () => (
   <section className="bg-[#333] px-6 py-24" id="overview">
     <div className="mx-auto mb-10 grid max-w-[1080px] gap-6 md:grid-cols-3">
@@ -17,18 +20,21 @@ export const ToothPowderFeatures = () => (
         title="Perfectly edible."
         description="No fluoride, SLS, preservatives, harmful chemicals, or artificial flavors added. Only 5 all-natural, safe to swallow ingredients."
         variant="onlight"
+        className={featureClasses}
       />
       <ValueProp
         icon={<Heart />}
         title="Perfectly healthy."
         description="Calcium, phosphorus, magnesium, and zinc play a critical role in bone health and help rebuild and remineralize tooth enamel."
         variant="onlight"
+        className={featureClasses}
       />
       <ValueProp
         icon={<MaskHappy />}
         title="Perfectly gentle."
         description="Ultra-finely ground ingredients gently polish and remineralize your teeth without wearing away enamel, preserving the health and shine of your smile."
         variant="onlight"
+        className={featureClasses}
       />
     </div>
 
@@ -38,12 +44,14 @@ export const ToothPowderFeatures = () => (
         title="Perfectly economical."
         description="Despite its premium ingredients, our tooth powder lasts up to 50% longer than a typical 3.4oz tube of toothpaste when brushing twice daily, offering excellent value for money."
         variant="onlight"
+        className={featureClasses}
       />
       <ValueProp
         icon={<Plant />}
         title="Perfectly sustainable."
         description="All materials we use are made from recyclable material, making it a sustainable choice for a conscious consumer."
         variant="onlight"
+        className={featureClasses}
       />
     </div>
   </section>

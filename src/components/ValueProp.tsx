@@ -1,4 +1,4 @@
-import { type ReactNode } from "react";
+import { type HTMLAttributes, type ReactNode } from "react";
 import cn from "classnames";
 import { IconContext } from "@phosphor-icons/react";
 
@@ -9,10 +9,10 @@ type ValuePropProps = {
   title: string;
   description: string;
   variant?: "ondark" | "onlight";
-};
+} & HTMLAttributes<HTMLDivElement>;
 
 export const ValueProp = (props: ValuePropProps) => (
-  <article className="grid h-max flex-1 gap-4 py-3 sm:px-3">
+  <article className={cn("grid h-max flex-1 gap-4 py-3 sm:px-3", props.className)}>
     <IconContext.Provider
       value={{
         size: 32,
