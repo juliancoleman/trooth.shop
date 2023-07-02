@@ -38,7 +38,7 @@ export const ToothPowderFeatures = () => (
       />
     </div>
 
-    <div className="mx-auto grid max-w-[712px] gap-6 pb-24 md:grid-cols-2">
+    <div className="mx-auto grid max-w-[712px] gap-6 md:grid-cols-2">
       <ValueProp
         icon={<HandCoins />}
         title="Perfectly economical."

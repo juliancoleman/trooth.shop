@@ -12,7 +12,15 @@ type ValuePropProps = {
 } & HTMLAttributes<HTMLDivElement>;
 
 export const ValueProp = (props: ValuePropProps) => (
-  <article className={cn("grid h-max flex-1 gap-4 py-3 sm:px-3", props.className)}>
+  <article
+    className={cn(
+      "grid h-max flex-1 gap-4 py-3 sm:px-3",
+      {
+        "px-3": props.variant === "onlight",
+      },
+      props.className,
+    )}
+  >
     <IconContext.Provider
       value={{
         size: 32,

@@ -1,12 +1,13 @@
+import { getPaymentLinks, getProduct, productsWithPrices } from "@/api/stripe";
 import { AppBar } from "@/components/AppBar";
 import { ToothPowderHero } from "@/components/ToothPowderHero";
 import { Footer } from "@/components/Footer";
 import { ToothPowderFeatures } from "@/components/ToothPowderFeatures";
-import { getPaymentLinks, getProduct, productsWithPrices } from "@/api/stripe";
 import { ProductHeader } from "@/components/ProductHeader";
 import { ToothPowderIngredients } from "@/components/ToothPowderIngredients";
+import { ToothPowderUsageInstructions } from "@/components/ToothPowderUsageInstructions";
 
-export default async function() {
+export default async function () {
   // theme is always "ondark" for the OG charcoal tooth powder.
   const variant = "ondark";
 
@@ -15,13 +16,21 @@ export default async function() {
   // @ts-expect-error: We haven't mutated a deep object of the original value
   product = await productsWithPrices(product);
 
+  // get payment links
   let { data: toothPowderPaymentLinks } = await getPaymentLinks();
+  // filter payment links only to the current product shown
   toothPowderPaymentLinks = toothPowderPaymentLinks.filter(
-    (plink) => plink.metadata.product === "tooth powder",
+    (plink) =>
+      plink.metadata.product === "tooth powder" && plink.active === true,
   );
+  // get the default payment link for the one-time purchase
   const defaultPaymentLink = toothPowderPaymentLinks.find(
     (plink) => plink.metadata.is_default === "true",
   )?.url;
+  // get all other links for subscriptions ordered by metadata.index asc
+  const subscriptionPaymentLinks = toothPowderPaymentLinks
+    .filter((plink) => plink.metadata.is_default !== "true")
+    .sort((a, b) => Number(a.metadata.index) - Number(b.metadata.index));
 
   return (
     <>
@@ -34,9 +43,11 @@ export default async function() {
       <ToothPowderHero
         product={product}
         defaultPaymentLink={defaultPaymentLink}
+        subscriptionPaymentLinks={subscriptionPaymentLinks}
       />
       <ToothPowderFeatures />
       <ToothPowderIngredients />
+      <ToothPowderUsageInstructions />
       <Footer />
     </>
   );
