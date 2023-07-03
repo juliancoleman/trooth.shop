@@ -57,6 +57,7 @@ export const Footer = () => (
       </nav>
 
       <div className="grid gap-9">
+        {/*
         <nav className="grid gap-3">
           <p className={cn(nunitoBold.className, "text-base")}>Trooth Values</p>
           <Link
@@ -72,8 +73,10 @@ export const Footer = () => (
             Privacy
           </Link>
         </nav>
+        */}
 
         <nav className="grid gap-3">
+          {/*
           <p className={cn(nunitoBold.className, "text-base")}>Company</p>
           <Link
             href="/mission"
@@ -93,6 +96,7 @@ export const Footer = () => (
           >
             Support
           </Link>
+          */}
 
           <div className="flex gap-4 sm:gap-2">
             <IconContext.Provider value={{ size: 32, className: "sm:p-1.5" }}>
