@@ -21,7 +21,8 @@ export const ProductAction = (props: ProductActionProps) => (
       {
         "text-trooth-primary-100 hover:text-trooth-primary-200":
           props.variant === "ondark",
-        "text-[#333] hover:text-[#555]": props.variant === "onlight",
+        "text-[#333] hover:text-[#555]":
+          props.variant === "onlight",
       },
     )}
   >

@@ -2,11 +2,26 @@ import cn from "classnames";
 
 import { nunitoBold, nunitoMedium, nunitoSansRegular } from "@/config/fonts";
 
-export function ToothPowderUsageInstructions() {
+export function ToothPowderUsageInstructions({
+  variant = "ondark",
+}: {
+  variant?: "ondark" | "onlight";
+}) {
   return (
-    <section id="how-to-use" className="bg-[#333]">
+    <section
+      id="how-to-use"
+      className={cn({
+        "bg-[#333]": variant === "ondark",
+        "bg-trooth-primary-200": variant === "onlight",
+      })}
+    >
       <div className="mx-auto max-w-[1080px] px-6 py-24">
-        <h3 className={cn(nunitoMedium.className, "mb-4 text-4xl text-white")}>
+        <h3
+          className={cn(nunitoMedium.className, "mb-4 text-4xl", {
+            "text-white": variant === "ondark",
+            "text-[#333]": variant === "onlight",
+          })}
+        >
           How to use
         </h3>
 

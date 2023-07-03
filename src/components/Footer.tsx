@@ -43,17 +43,17 @@ export const Footer = () => (
           Charcoal Tooth Powder
         </Link>
         <Link
-          href="/products/tooth-powder"
+          href="/products/spearmint-tooth-powder"
           className={cn(nunitoRegular.className, "text-base")}
         >
           Spearmint Tooth Powder
         </Link>
-        <Link
+        {/*<Link
           href="/products/mouth-rinse"
           className={cn(nunitoRegular.className, "text-base")}
         >
           Spearmint Mouth Rinse
-        </Link>
+        </Link>*/}
       </nav>
 
       <div className="grid gap-9">

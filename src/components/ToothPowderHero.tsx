@@ -9,12 +9,14 @@ import { dollarFormatter } from "@/utils/intl";
 import { nunitoBold, nunitoRegular, nunitoSansRegular } from "@/config/fonts";
 
 type ToothPowderHeroProps = {
+  variant?: "ondark" | "onlight";
   product: Stripe.Product;
   defaultPaymentLink: string;
   subscriptionPaymentLinks: Stripe.PaymentLink[];
 };
 
 function ProductInfo({
+  variant,
   product,
   defaultPaymentLink,
   subscriptionPaymentLinks,
@@ -50,7 +52,12 @@ function ProductInfo({
   const subscriptionPrice = basePrice - basePrice * 0.1;
 
   return (
-    <aside className="grid gap-2.5 rounded-lg bg-hero-light p-8 text-[#333] backdrop-blur-sm">
+    <aside
+      className={cn("grid gap-2.5 rounded-lg p-8 backdrop-blur-sm", {
+        "bg-hero-light text-[#333]": variant === "ondark",
+        "bg-hero-dark text-white": variant === "onlight",
+      })}
+    >
       <p className={cn(nunitoBold.className, "text-2xl")}>{product.name}</p>
       <p className={cn(nunitoSansRegular.className, "text-sm")}>
         {product.metadata.shortDescription}
@@ -77,15 +84,29 @@ function ProductInfo({
         href={activeSubscriptionUrl ?? ""}
         className={cn(
           nunitoRegular.className,
-          "rounded-full bg-[#333] py-[5px] pl-4 pr-3 text-center text-white",
+          "rounded-full py-[5px] pl-4 pr-3 text-center text-white",
+          {
+            "bg-[#333]": variant === "ondark",
+            "bg-trooth-primary-500": variant === "onlight",
+          },
         )}
       >
         Subscribe
       </Link>
       <div className="my-2 flex items-center gap-1">
-        <hr className="flex-1 border-[#333]" />
+        <hr
+          className={cn("flex-1", {
+            "border-[#333]": variant === "ondark",
+            "border-white opacity-80": variant === "onlight",
+          })}
+        />
         <p className={cn(nunitoBold.className, "text-center text-xs")}>OR</p>
-        <hr className="flex-1 border-[#333]" />
+        <hr
+          className={cn("flex-1", {
+            "border-[#333]": variant === "ondark",
+            "border-white opacity-80": variant === "onlight",
+          })}
+        />
       </div>
       <p className={cn(nunitoSansRegular.className, "text-xs")}>
         One-time purchase
@@ -98,7 +119,11 @@ function ProductInfo({
         href={defaultPaymentLink ?? ""}
         className={cn(
           nunitoRegular.className,
-          "rounded-full bg-[#333] py-[5px] pl-4 pr-3 text-center text-white",
+          "rounded-full py-[5px] pl-4 pr-3 text-center text-white",
+          {
+            "bg-[#333]": variant === "ondark",
+            "bg-trooth-primary-500": variant === "onlight",
+          },
         )}
       >
         Buy now
@@ -111,15 +136,22 @@ function ProductInfo({
 }
 
 export const ToothPowderHero = ({
+  variant = "ondark",
   product,
   defaultPaymentLink,
   subscriptionPaymentLinks,
 }: ToothPowderHeroProps) => (
   <section className={cn("-mt-16")}>
-    <div className="-mt-32 w-full bg-hero-dark pt-48">
+    <div
+      className={cn("-mt-32 w-full pt-48", {
+        "bg-hero-dark": variant === "ondark",
+        "bg-hero-light": variant === "onlight",
+      })}
+    >
       <section className="mx-auto grid max-w-[1080px] px-6 md:grid-cols-[2.5fr_1fr]">
         <div />
         <ProductInfo
+          variant={variant}
           product={product}
           defaultPaymentLink={defaultPaymentLink}
           subscriptionPaymentLinks={subscriptionPaymentLinks}

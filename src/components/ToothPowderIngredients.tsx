@@ -2,9 +2,19 @@ import cn from "classnames";
 
 import { nunitoBold, nunitoMedium, nunitoRegular } from "@/config/fonts";
 
-export function ToothPowderIngredients() {
+export function ToothPowderIngredients({
+  variant = "ondark",
+}: {
+  variant?: "ondark" | "onlight";
+}) {
   return (
-    <section id="ingredients" className="bg-[#555] text-white">
+    <section
+      id="ingredients"
+      className={cn({
+        "bg-[#555] text-trooth-primary-100": variant === "ondark",
+        "bg-white": variant === "onlight",
+      })}
+    >
       <div className="mx-auto grid max-w-[640px] gap-4 px-6 py-24">
         <h3 className={cn(nunitoMedium.className, "mb-4 text-4xl")}>
           Ingredients
@@ -28,19 +38,29 @@ export function ToothPowderIngredients() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2">
+        {/* This is a super generous assumption... Fix it */}
+        {variant === "onlight" && <div className="grid grid-cols-2">
+          <p className={cn(nunitoBold.className, "text-base")}>
+            Spearmint Essential Oil
+          </p>
           <p
             className={cn(
-              nunitoBold.className,
-              "text-base text-trooth-primary-100",
+              nunitoRegular.className,
+              "text-base opacity-70",
             )}
           >
+            Freshens breath and leaves a cool mint aftertaste with each brushing.
+          </p>
+        </div>}
+
+        <div className="grid grid-cols-2">
+          <p className={cn(nunitoBold.className, "text-base")}>
             Eggshell Powder
           </p>
           <p
             className={cn(
               nunitoRegular.className,
-              "text-base text-trooth-primary-100 opacity-70",
+              "text-base opacity-70",
             )}
           >
             Rich in calcium and other minerals. Remineralizes teeth and rebuilds
@@ -52,7 +72,7 @@ export function ToothPowderIngredients() {
           <p
             className={cn(
               nunitoBold.className,
-              "text-base text-trooth-primary-100",
+              "text-base",
             )}
           >
             Activated Coconut Charcoal
@@ -60,7 +80,7 @@ export function ToothPowderIngredients() {
           <p
             className={cn(
               nunitoRegular.className,
-              "text-base text-trooth-primary-100 opacity-70",
+              "text-base opacity-70",
             )}
           >
             Removes surface stains, prevents plaque build-up, kills bad
@@ -72,7 +92,7 @@ export function ToothPowderIngredients() {
           <p
             className={cn(
               nunitoBold.className,
-              "text-base text-trooth-primary-100",
+              "text-base",
             )}
           >
             Baking Soda
@@ -80,7 +100,7 @@ export function ToothPowderIngredients() {
           <p
             className={cn(
               nunitoRegular.className,
-              "text-base text-trooth-primary-100 opacity-70",
+              "text-base opacity-70",
             )}
           >
             Balances the delicate oral pH, remineralizes teeth, prevents tooth
@@ -92,7 +112,7 @@ export function ToothPowderIngredients() {
           <p
             className={cn(
               nunitoBold.className,
-              "text-base text-trooth-primary-100",
+              "text-base",
             )}
           >
             Hydroxyapatite
@@ -100,7 +120,7 @@ export function ToothPowderIngredients() {
           <p
             className={cn(
               nunitoRegular.className,
-              "text-base text-trooth-primary-100 opacity-70",
+              "text-base opacity-70",
             )}
           >
             All that calcium can't work without phosphorus. It is an essential
@@ -113,7 +133,7 @@ export function ToothPowderIngredients() {
           <p
             className={cn(
               nunitoBold.className,
-              "text-base text-trooth-primary-100",
+              "text-base",
             )}
           >
             Peppermint Oil
@@ -121,7 +141,7 @@ export function ToothPowderIngredients() {
           <p
             className={cn(
               nunitoRegular.className,
-              "text-base text-trooth-primary-100 opacity-70",
+              "text-base opacity-70",
             )}
           >
             Cuts through bacteria like butter. In conjunction with coconut

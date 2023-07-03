@@ -16,9 +16,10 @@ export function ProductHeader({
 }) {
   return (
     <header
-      className={cn(
-        "sticky top-0 z-10 text-white backdrop-blur transition-colors",
-      )}
+      className={cn("sticky top-0 z-10 backdrop-blur transition-colors", {
+        "text-white": variant === "ondark",
+        "bg-white/20": variant === "onlight",
+      })}
     >
       <div className="mx-auto flex max-w-[1080px] items-center justify-between px-6 py-3">
         <h1 className={cn(nunitoSansBold.className, "text-base")}>
