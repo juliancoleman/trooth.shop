@@ -12,7 +12,7 @@ import {
 import { ValueProp } from "./ValueProp";
 
 const featureClasses =
-  "bg-white/5 rounded-md !h-full auto-rows-max sm:py-4 sm:px-6";
+  "bg-white/5 rounded-md !h-full auto-rows-max sm:py-4 sm:px-6 px-3";
 
 export const ToothPowderFeatures = ({
   variant = "ondark",
