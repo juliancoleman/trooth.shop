@@ -17,9 +17,11 @@ type ProductCardProps = {
 
 export const ProductCard = (props: ProductCardProps) => (
   <div className="grid gap-6 rounded border-2 border-trooth-primary-100 bg-white p-8">
-    <figure className="aspect-video bg-white">
-      <Image src={props.image} alt={props.title} width={300} height={169} className="filter drop-shadow-xl" />
-    </figure>
+    <Link href={props.routePath}>
+      <figure className="aspect-video bg-white">
+        <Image src={props.image} alt={props.title} width={300} height={169} className="filter drop-shadow-xl" />
+      </figure>
+    </Link>
 
     <p className={cn(nunitoBold.className, "text-center text-xl")}>
       {props.title}
