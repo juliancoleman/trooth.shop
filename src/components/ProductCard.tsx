@@ -3,6 +3,7 @@
 import cn from "classnames";
 import { CaretRight, ArrowRight } from "@phosphor-icons/react";
 import Link from "next/link";
+import Image from "next/image";
 
 import { nunitoBold, nunitoSansRegular } from "@/config/fonts";
 import { dollarFormatter } from "@/utils/intl";
@@ -11,11 +12,14 @@ type ProductCardProps = {
   title: string;
   price: number;
   routePath: string;
+  image: string;
 };
 
 export const ProductCard = (props: ProductCardProps) => (
   <div className="grid gap-6 rounded border-2 border-trooth-primary-100 bg-white p-8">
-    <figure className="aspect-video bg-trooth-primary-300" />
+    <figure className="aspect-video bg-white">
+      <Image src={props.image} alt={props.title} width={300} height={169} className="filter drop-shadow-xl" />
+    </figure>
 
     <p className={cn(nunitoBold.className, "text-center text-xl")}>
       {props.title}

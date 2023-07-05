@@ -7,6 +7,7 @@ import Link from "next/link";
 
 import { dollarFormatter } from "@/utils/intl";
 import { nunitoBold, nunitoRegular, nunitoSansRegular } from "@/config/fonts";
+import Image from "next/image";
 
 type ToothPowderHeroProps = {
   variant?: "ondark" | "onlight";
@@ -149,7 +150,9 @@ export const ToothPowderHero = ({
       })}
     >
       <section className="mx-auto grid max-w-[1080px] px-6 md:grid-cols-[2.5fr_1fr]">
-        <div />
+        <figure className="object-cover grid content-end">
+          <Image src={product.images[0]} width={612} height={408} alt={product.name} className="filter drop-shadow-md w-full" />
+        </figure>
         <ProductInfo
           variant={variant}
           product={product}

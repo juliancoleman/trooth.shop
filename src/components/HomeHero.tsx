@@ -3,6 +3,7 @@ import cn from "classnames";
 import { nunitoRegular, nunitoSansRegular } from "@/config/fonts";
 import { HeroAction } from "./HeroAction";
 import { ScrollInformant } from "./ScrollInformant";
+import Image from "next/image";
 
 export const HomeHero = () => (
   <section className="relative -mt-16 bg-hero">
@@ -35,7 +36,13 @@ export const HomeHero = () => (
       </article>
 
       <figure className="hidden flex-1 place-self-center justify-self-center text-center sm:block">
-        placeholder image
+        <Image
+          src="/images/trooth-site-hero-removebg-preview.png"
+          alt="Showing charcoal and spearmint tooth powder tin containers"
+          width={612}
+          height={408}
+          className="drop-shadow-[0_7px_5px_#777] filter"
+        />
       </figure>
     </div>
 

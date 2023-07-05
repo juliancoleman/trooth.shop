@@ -1,6 +1,7 @@
 import cn from "classnames";
 
 import { nunitoBold, nunitoMedium, nunitoSansRegular } from "@/config/fonts";
+import Image from "next/image";
 
 export function ToothPowderUsageInstructions({
   variant = "ondark",
@@ -32,7 +33,9 @@ export function ToothPowderUsageInstructions({
             <p className={cn(nunitoSansRegular.className, "text-xs")}>
               Shake off any excess water
             </p>
-            <figure className="aspect-square w-full bg-trooth-primary-400" />
+            <figure className="aspect-square w-full bg-trooth-primary-400">
+              <Image src="/images/wet.jpg" alt="Wet the toothbrush bristles" height={852} width={852} />
+            </figure>
           </div>
 
           {/* Step 2 */}
@@ -41,7 +44,9 @@ export function ToothPowderUsageInstructions({
             <p className={cn(nunitoSansRegular.className, "text-xs")}>
               Just coat the tip, a little goes a long way
             </p>
-            <figure className="aspect-square w-full bg-trooth-primary-400" />
+            <figure className="aspect-square w-full bg-trooth-primary-400">
+              <Image src="/images/dip.jpg" alt="Dip the tip of the bristles in the powder" height={852} width={852} />
+            </figure>
           </div>
 
           {/* Step 3 */}
@@ -50,7 +55,9 @@ export function ToothPowderUsageInstructions({
             <p className={cn(nunitoSansRegular.className, "text-xs")}>
               Massage the bristles into the teeth and gums
             </p>
-            <figure className="aspect-square w-full bg-trooth-primary-400" />
+            <figure className="aspect-square w-full bg-trooth-primary-400">
+              <Image src="/images/brush.jpeg" alt="Massage bristles into teeth and gums" height={852} width={852} />
+            </figure>
           </div>
         </div>
       </div>
