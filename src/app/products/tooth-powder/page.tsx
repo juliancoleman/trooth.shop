@@ -23,6 +23,7 @@ export default async function () {
     (plink) =>
       plink.metadata.product === "tooth powder" && plink.active === true,
   );
+
   // get the default payment link for the one-time purchase
   const defaultPaymentLink = toothPowderPaymentLinks.find(
     (plink) => plink.metadata.is_default === "true",

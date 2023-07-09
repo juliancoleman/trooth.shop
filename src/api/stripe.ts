@@ -29,7 +29,6 @@ export const productsWithPrices = async (product: Stripe.Product) => {
  * Payment Link API methods
  */
 export function getPaymentLinks() {
-  // 3 products, 1 default + 3 subscription links = 12 total links.
   // Default limit is 10
-  return stripe.paymentLinks.list({ limit: 12 });
+  return stripe.paymentLinks.list({ limit: 20 });
 }
