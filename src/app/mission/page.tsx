@@ -15,7 +15,7 @@ export default function() {
           CO. We started this company because we want to help you treat
           your body better. <span className={nunitoSansBold.className}>Enough</span>{" "}
           buying ineffective, harmful products from stores that lie
-          and say they're good and healthy for you.
+          and say they're good and healthy for you.{" "}
           <span className={nunitoSansBold.className}>Enough</span>{" "}
           spending an arm and a leg for healthier options.
           <span className={nunitoSansBold.className}>
