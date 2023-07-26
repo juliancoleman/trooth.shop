@@ -1,15 +1,19 @@
 "use client";
 
 import cn from "classnames";
+import { useRef } from "react";
 
+import { optInCustomer } from "@/api/stripe";
 import {
   nunitoBold,
   nunitoSansRegular,
   nunitoSansMedium,
 } from "@/config/fonts";
 
-export const Subscribe = () => (
-  <section className="bg-[#333] text-white">
+export const Subscribe = () => {
+  const formRef = useRef(null);
+  
+  return <section className="bg-[#333] text-white">
     <div className="mx-auto grid max-w-[1080px] items-center gap-12 px-6 py-24 text-center sm:flex sm:text-left">
       <article className="grid flex-1 gap-6">
         <header className={cn(nunitoBold.className, "text-2xl")}>
@@ -22,7 +26,15 @@ export const Subscribe = () => (
         </p>
       </article>
 
-      <form className="flex flex-1 gap-6">
+      <form
+        className="flex flex-1 gap-6"
+        ref={formRef}
+        action={async (formdata) => {
+          const email = formdata.get("email");
+          await optInCustomer(email);
+          formRef.current.reset();
+        }}
+      >
         <input
           className={cn(
             nunitoSansMedium.className,
@@ -42,4 +54,4 @@ export const Subscribe = () => (
       </form>
     </div>
   </section>
-);
+};
