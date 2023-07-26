@@ -92,7 +92,7 @@ export const Footer = () => (
           </Link>
           */}
           <Link
-            href="/support"
+            href="mailto:support@trooth.shop"
             className={cn(nunitoRegular.className, "text-base")}
           >
             Support
@@ -100,10 +100,15 @@ export const Footer = () => (
 
           <div className="flex gap-4 sm:gap-2">
             <IconContext.Provider value={{ size: 32, className: "sm:p-1.5" }}>
-              <InstagramLogo />
-              <LinkedinLogo />
+              {/* <InstagramLogo /> */}
+              <Link to="https://www.linkedin.com/company/trooth-shop">
+                <LinkedinLogo />
+              </Link>
               <TiktokLogo />
               <TwitterLogo />
+              <Link to="https://t.me/troothshop">
+                <TelegramLogo />
+              </Link>
             </IconContext.Provider>
           </div>
         </nav>
