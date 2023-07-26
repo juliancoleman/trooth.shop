@@ -32,3 +32,14 @@ export function getPaymentLinks() {
   // Default limit is 10
   return stripe.paymentLinks.list({ limit: 20 });
 }
+
+/**
+ * Customer Opt-In Subscriber
+ */
+export function optInCustomer(email: string) {
+  const customer = {};
+  customer.email = email;
+  customer.metadata.opt_in = true;
+
+  return stripe.customers.create(customer);
+}
