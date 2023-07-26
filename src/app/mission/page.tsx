@@ -8,9 +8,9 @@ export default function() {
   return (
     <>
       <AppBar />
-      <section className="max-w-prose py-8 px-6">
-        <h1 className={cn(nunitoRegular.className, "text-4xl")}>Trooth's Mission</h1>
-        <p className={cn(nunitoSansRegular.className, "text-base")}>
+      <section className="max-w-prose py-8 px-6 mx-auto">
+        <h1 className={cn(nunitoRegular.className, "text-4xl mb-6")}>Trooth's Mission</h1>
+        <p className={cn(nunitoSansRegular.className, "text-base mb-4")}>
           Trooth is a family-owned business based out of Castle Rock,
           CO. We started this company because you deserve to treat
           your body better. <span className={nunitoSansBold.className}>Enough</span>
