@@ -37,7 +37,7 @@ export function getPaymentLinks() {
  * Customer Opt-In Subscriber
  */
 export function optInCustomer(email: string) {
-  const customer = {};
+  const customer: Stripe.Customer = {};
   customer.email = email;
   customer.metadata.opt_in = true;
 
