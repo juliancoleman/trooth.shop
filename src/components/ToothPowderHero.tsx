@@ -116,6 +116,9 @@ function ProductInfo({
         {dollarFormatter.format(basePrice)}
         <sup className="text-xs">.00</sup>
       </p>
+      <p className="text-xs opacity-50 text-center">
+        Adjust quantity during checkout.
+      </p>
       <Link
         href={defaultPaymentLink ?? ""}
         className={cn(
