@@ -12,7 +12,7 @@ export default function() {
         <h1 className={cn(nunitoRegular.className, "text-4xl mb-6")}>Trooth's Mission</h1>
         <p className={cn(nunitoSansRegular.className, "text-base mb-4")}>
           Trooth is a family-owned business based out of Castle Rock,
-          CO. We started this company because you deserve to treat
+          CO. We started this company because we want to help you treat
           your body better. <span className={nunitoSansBold.className}>Enough</span>{" "}
           buying ineffective, harmful products from stores that lie
           and say they're good and healthy for you.
