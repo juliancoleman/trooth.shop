@@ -82,7 +82,7 @@ export const AppBar = ({ variant = "default" }: AppBarProps) => {
           <Link href="/mission" className={baseLinkClass}>
             Our Mission
           </Link>
-          <Link href="/support" className={baseLinkClass}>
+          <Link href="mailto:support@trooth.shop" className={baseLinkClass}>
             Support
           </Link>
         </nav>
