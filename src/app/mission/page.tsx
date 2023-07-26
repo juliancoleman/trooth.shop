@@ -21,13 +21,13 @@ export default function() {
           potential, free from harmful chemicals, to deliver safe and
           effective solutions.
         </p>
-        <p className={cn(nunitoSansRegular.className, "text-base")}>
+        <p className={cn(nunitoSansRegular.className, "text-base mb-4")}>
           Our commitment extends beyond just your smile&mdash;we vow
           to make a vast lineup of products that are safe to eat,
           natural, affordable, and so good that you wouldn't even
           think about going back to the cheaper alternatives.
         </p>
-        <p className={cn(nunitoSansRegular.className, "text-base")}>
+        <p className={cn(nunitoSansRegular.className, "text-base mb-4")}>
           Join us on a new era of personal care that brings vitality
           and radiance to your life (literally). We're here to provide
           expert guidance, and cutting-edge natural solutions. Discover
