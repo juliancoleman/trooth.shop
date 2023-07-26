@@ -13,10 +13,10 @@ export default function() {
         <p className={cn(nunitoSansRegular.className, "text-base mb-4")}>
           Trooth is a family-owned business based out of Castle Rock,
           CO. We started this company because you deserve to treat
-          your body better. <span className={nunitoSansBold.className}>Enough</span>
+          your body better. <span className={nunitoSansBold.className}>Enough</span>{" "}
           buying ineffective, harmful products from stores that lie
           and say they're good and healthy for you.
-          <span className={nunitoSansBold.className}>Enough</span>
+          <span className={nunitoSansBold.className}>Enough</span>{" "}
           spending an arm and a leg for healthier options.
           <span className={nunitoSansBold.className}>
             Enough with the BS.
