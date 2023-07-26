@@ -130,7 +130,7 @@ function ProductInfo({
         Buy now
       </Link>
       <p className="text-xs opacity-50">
-        Tax and shipping calculated at checkout.
+        Tax and shipping calculated at checkout. All orders processed within 48 hours.
       </p>
     </aside>
   );
