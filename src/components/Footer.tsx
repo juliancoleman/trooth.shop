@@ -8,6 +8,7 @@ import {
   LinkedinLogo,
   TiktokLogo,
   TwitterLogo,
+  TelegramLogo,
 } from "@phosphor-icons/react";
 
 import { comfortaaBoldAlt2, nunitoBold, nunitoRegular } from "@/config/fonts";
