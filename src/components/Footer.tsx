@@ -101,12 +101,12 @@ export const Footer = () => (
           <div className="flex gap-4 sm:gap-2">
             <IconContext.Provider value={{ size: 32, className: "sm:p-1.5" }}>
               {/* <InstagramLogo /> */}
-              <Link to="https://www.linkedin.com/company/trooth-shop">
+              <Link href="https://www.linkedin.com/company/trooth-shop">
                 <LinkedinLogo />
               </Link>
               <TiktokLogo />
               <TwitterLogo />
-              <Link to="https://t.me/troothshop">
+              <Link href="https://t.me/troothshop">
                 <TelegramLogo />
               </Link>
             </IconContext.Provider>
