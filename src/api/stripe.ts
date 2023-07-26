@@ -1,3 +1,5 @@
+"use server";
+
 import { type Stripe } from "stripe";
 
 import { stripe } from "@/config/stripe";
@@ -28,7 +30,7 @@ export const productsWithPrices = async (product: Stripe.Product) => {
 /**
  * Payment Link API methods
  */
-export function getPaymentLinks() {
+export async function getPaymentLinks() {
   // Default limit is 10
   return stripe.paymentLinks.list({ limit: 20 });
 }
@@ -36,14 +38,12 @@ export function getPaymentLinks() {
 /**
  * Customer Opt-In Subscriber
  */
-export function optInCustomer(email: string) {
-  return stripe.customers.create(
-    {
-      email,
-      metadata: {
-        subscriber_opt_in: "true",
-      },
+export async function optInCustomer(email: string) {
+  console.log(email);
+  return stripe.customers.create({
+    email,
+    metadata: {
+      subscriber_opt_in: "true",
     },
-    {},
-  );
+  });
 }

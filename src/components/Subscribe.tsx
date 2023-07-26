@@ -1,7 +1,8 @@
 "use client";
 
 import cn from "classnames";
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import { Check, CircleNotch } from "@phosphor-icons/react";
 
 import { optInCustomer } from "@/api/stripe";
 import {
@@ -11,19 +12,20 @@ import {
 } from "@/config/fonts";
 
 export const Subscribe = () => {
-  const formRef = useRef(null);
+  const formRef = useRef<HTMLFormElement>();
+  const [success, setSuccess] = useState<boolean | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
 
   return (
     <section className="bg-[#333] text-white">
       <div className="mx-auto grid max-w-[1080px] items-center gap-12 px-6 py-24 text-center sm:flex sm:text-left">
         <article className="grid flex-1 gap-6">
           <header className={cn(nunitoBold.className, "text-2xl")}>
-            Subscribe and Save
+            Exclusive Discounts and Updates
           </header>
           <p className={cn(nunitoSansRegular.className, "text-base")}>
-            Get exclusive deals, offers, and discounts. Subscribers are the
-            first to be notified of new product releases and updates. You can
-            unsubscribe at any time.
+            No spam, ever (about 1 email per month). You can unsubscribe at any
+            time.
           </p>
         </article>
 
@@ -31,9 +33,15 @@ export const Subscribe = () => {
           className="flex flex-1 gap-6"
           ref={formRef}
           action={async (formdata) => {
+            setIsSubmitting(true);
             const email: string = formdata.get("email") as string;
+            console.log("email", email);
             await optInCustomer(email);
-            formRef.current.reset();
+            if (formRef && formRef.current) {
+              formRef.current.reset();
+              setIsSubmitting(false);
+              setSuccess(true);
+            }
           }}
         >
           <input
@@ -49,9 +57,26 @@ export const Subscribe = () => {
             className={cn(
               nunitoSansMedium.className,
               "rounded-full bg-white px-4 py-2 text-base text-trooth-primary-500",
+              "relative flex items-center gap-2",
             )}
           >
-            Subscribe
+            <span
+              className={cn(
+                "absolute inset-0 grid place-content-center opacity-0 transition-opacity",
+                {
+                  "opacity-100": isSubmitting,
+                },
+              )}
+            >
+              <CircleNotch className="animate-spin" />
+            </span>
+            {success === true ? (
+              <>
+                Subscribed <Check weight="bold" />
+              </>
+            ) : (
+              "Subscribe"
+            )}
           </button>
         </form>
       </div>
