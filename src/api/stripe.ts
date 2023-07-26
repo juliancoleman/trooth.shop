@@ -37,7 +37,6 @@ export function getPaymentLinks() {
  * Customer Opt-In Subscriber
  */
 export function optInCustomer(email: string) {
-
   return stripe.customers.create({
     email,
     metadata: {
