@@ -105,8 +105,10 @@ export const Footer = () => (
               <Link href="https://www.linkedin.com/company/trooth-shop">
                 <LinkedinLogo />
               </Link>
-              {/* <TiktokLogo />
-              <TwitterLogo /> */}
+              {/* <TiktokLogo /> */}
+              <Link href="https://twitter.com/trooth_shop">
+                <TwitterLogo />
+              </Link>
               <Link href="https://t.me/troothshop">
                 <TelegramLogo />
               </Link>
