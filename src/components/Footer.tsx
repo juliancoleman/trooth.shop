@@ -20,6 +20,8 @@ export const Footer = () => (
         <nav className="grid gap-3">
           <Link
             href="/"
+            title="Go home"
+            aria-label="Go home"
             className={cn(
               comfortaaBoldAlt2.className,
               "text-2xl tracking-tight",
@@ -39,12 +41,14 @@ export const Footer = () => (
         <p className={cn(nunitoBold.className, "text-base")}>Shop</p>
         <Link
           href="/products/tooth-powder"
+          aria-label="Charcoal Tooth Powder product page"
           className={cn(nunitoRegular.className, "text-base")}
         >
           Charcoal Tooth Powder
         </Link>
         <Link
           href="/products/spearmint-tooth-powder"
+          aria-label="Spearmint Tooth Powder product page"
           className={cn(nunitoRegular.className, "text-base")}
         >
           Spearmint Tooth Powder
@@ -80,9 +84,10 @@ export const Footer = () => (
           <p className={cn(nunitoBold.className, "text-base")}>Company</p>
           <Link
             href="/mission"
+            aria-label="Trooth's mission"
             className={cn(nunitoRegular.className, "text-base")}
           >
-            Mission
+            Trooth&apos;s Mission
           </Link>
           {/*
           <Link
@@ -94,6 +99,7 @@ export const Footer = () => (
           */}
           <Link
             href="mailto:support@trooth.shop"
+            aria-label="Send email to support@trooth.shop"
             className={cn(nunitoRegular.className, "text-base")}
           >
             Support
@@ -102,14 +108,26 @@ export const Footer = () => (
           <div className="flex gap-4 sm:gap-2">
             <IconContext.Provider value={{ size: 32, className: "sm:p-1.5" }}>
               {/* <InstagramLogo /> */}
-              <Link href="https://www.linkedin.com/company/trooth-shop">
+              <Link
+                href="https://www.linkedin.com/company/trooth-shop"
+                aria-label="Trooth LinkedIn page"
+                title="Trooth LinkedIn page"
+              >
                 <LinkedinLogo />
               </Link>
               {/* <TiktokLogo /> */}
-              <Link href="https://twitter.com/trooth_shop">
+              <Link
+                href="https://twitter.com/trooth_shop"
+                aria-label="Trooth Twitter Profile"
+                title="Trooth Twitter Profile"
+              >
                 <TwitterLogo />
               </Link>
-              <Link href="https://t.me/troothshop">
+              <Link
+                href="https://t.me/troothshop"
+                aria-label="Trooth Telegram Channel"
+                title="Trooth Telegram Channel"
+              >
                 <TelegramLogo />
               </Link>
             </IconContext.Provider>

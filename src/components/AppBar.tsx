@@ -73,17 +73,18 @@ export const AppBar = ({ variant = "default" }: AppBarProps) => {
         </Link>
 
         <nav className="hidden gap-2 sm:flex">
-          <Link
-            href={process.env.NEXT_PUBLIC_STRIPE_CUSTOMER_PORTAL_URL}
-            className={baseLinkClass}
-          >
-            Subscriptions
-          </Link>
           <Link href="/mission" className={baseLinkClass}>
-            Our Mission
+            Trooth&apos;s Mission
           </Link>
           <Link href="mailto:support@trooth.shop" className={baseLinkClass}>
             Support
+          </Link>
+          <Link
+            href={process.env.NEXT_PUBLIC_STRIPE_CUSTOMER_PORTAL_URL}
+            className={baseLinkClass}
+            rel="nofollow"
+          >
+            Subscriptions
           </Link>
         </nav>
 

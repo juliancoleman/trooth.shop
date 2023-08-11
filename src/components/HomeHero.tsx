@@ -30,7 +30,7 @@ export const HomeHero = () => (
             Shop
           </HeroAction>
           <HeroAction href="/mission" variant="secondary" size="default">
-            Learn more
+            Our Mission
           </HeroAction>
         </div>
       </article>
@@ -42,6 +42,7 @@ export const HomeHero = () => (
           width={612}
           height={408}
           className="drop-shadow-[0_7px_5px_#777] filter"
+          priority
         />
       </figure>
     </div>
