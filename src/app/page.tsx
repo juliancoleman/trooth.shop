@@ -9,6 +9,20 @@ import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Trooth | Shop",
+  description:
+    "Buy our fluoride-free and non-toxic tooth powder and other products safe enough for toddlers to use.",
+  openGraph: {
+    siteName: "Trooth Shop",
+    url: "https://trooth.shop/",
+    title: "Trooth Shop | All-Natural and Non-Toxic Health & Wellness Products",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@trooth_shop",
+    title: "Trooth Shop | All-Natural and Non-Toxic Health & Wellness Products",
+    description:
+      "Buy our fluoride-free and non-toxic tooth powder and other products safe enough for toddlers to use.",
+  },
 };
 
 export default function () {
