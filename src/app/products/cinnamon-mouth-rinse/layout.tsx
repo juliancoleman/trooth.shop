@@ -3,7 +3,7 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Trooth Shop | Cinnamon Mouth Rinse",
   description:
-    "Shop all-natural and chemical-free mouth rinses safe enough for infants to use.",
+    "Shop all-natural and chemical-free mouth rinses safe enough for children to use.",
   openGraph: {
     siteName: "Trooth Shop",
     url: "https://trooth.shop/products/cinnamon-mouth-rinse",
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     site: "@trooth+shop",
     title: "Trooth's Cinnamon Mouth Rinse",
     description:
-      "Shop all-natural and chemical-free mouth rinses safe enough for infants to use.",
+      "Shop all-natural and chemical-free mouth rinses safe enough for children to use.",
   },
 };
 
