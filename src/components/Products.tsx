@@ -8,6 +8,7 @@ export const Products = async () => {
   let { data: products } = await getProducts();
   products = products.filter((p) => p.metadata.isTopProduct === "true");
   products = await Promise.all(products.map(productsWithPrices));
+  products.sort((a) => (a.metadata.new ? -1 : 1));
 
   return (
     <section className="bg-[#fafafa]" id="products">

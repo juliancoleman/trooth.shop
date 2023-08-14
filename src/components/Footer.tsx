@@ -16,7 +16,7 @@ import { comfortaaBoldAlt2, nunitoBold, nunitoRegular } from "@/config/fonts";
 export const Footer = () => (
   <footer>
     <div className="mx-auto grid max-w-[1080px] gap-8 px-6 py-12 sm:flex sm:justify-around sm:gap-12">
-      <div className="flex flex-col justify-between gap-4">
+      <div className="flex flex-1 flex-col justify-between gap-4">
         <nav className="grid gap-3">
           <Link
             href="/"
@@ -37,7 +37,7 @@ export const Footer = () => (
         </p>
       </div>
 
-      <nav className="grid auto-rows-max gap-3">
+      <nav className="grid flex-1 auto-rows-max gap-3">
         <p className={cn(nunitoBold.className, "text-base")}>Shop</p>
         <Link
           href="/products/tooth-powder"
@@ -53,15 +53,46 @@ export const Footer = () => (
         >
           Spearmint Tooth Powder
         </Link>
-        {/*<Link
-          href="/products/mouth-rinse"
+        <Link
+          href="/products/spearmint-mouth-rinse"
           className={cn(nunitoRegular.className, "text-base")}
         >
           Spearmint Mouth Rinse
-        </Link>*/}
+        </Link>
+        <Link
+          href="/products/cinnamon-mouth-rinse"
+          className={cn(nunitoRegular.className, "text-base")}
+        >
+          Cinnamon Mouth Rinse
+        </Link>
+        <p className={cn(nunitoBold.className, "text-sm")}>Bundles</p>
+        <Link
+          href="/products/bundles/cinnamon-rinse-charcoal-tooth-powder"
+          className={cn(nunitoRegular.className, "text-base")}
+        >
+          Cinnamon Mouth Rinse + Charcoal Tooth Powder
+        </Link>
+        <Link
+          href="/products/bundles/cinnamon-rinse-spearmint-tooth-powder"
+          className={cn(nunitoRegular.className, "text-base")}
+        >
+          Cinnamon Mouth Rinse + Spearmint Tooth Powder
+        </Link>
+        <Link
+          href="/products/bundles/spearmint-rinse-charcoal-tooth-powder"
+          className={cn(nunitoRegular.className, "text-base")}
+        >
+          Spearmint Mouth Rinse + Charcoal Tooth Powder
+        </Link>
+        <Link
+          href="/products/bundles/spearmint-rinse-spearmint-tooth-powder"
+          className={cn(nunitoRegular.className, "text-base")}
+        >
+          Spearmint Mouth Rinse + Spearmint Tooth Powder
+        </Link>
       </nav>
 
-      <div className="grid gap-9">
+      <div className="grid flex-1 gap-9">
         {/*
         <nav className="grid gap-3">
           <p className={cn(nunitoBold.className, "text-base")}>Trooth Values</p>
@@ -80,7 +111,7 @@ export const Footer = () => (
         </nav>
         */}
 
-        <nav className="grid gap-3">
+        <nav className="grid auto-rows-max gap-3">
           <p className={cn(nunitoBold.className, "text-base")}>Company</p>
           <Link
             href="/mission"
@@ -107,7 +138,13 @@ export const Footer = () => (
 
           <div className="flex gap-4 sm:gap-2">
             <IconContext.Provider value={{ size: 32, className: "sm:p-1.5" }}>
-              {/* <InstagramLogo /> */}
+              <Link
+                href="https://instagram.com/troothshopofficial"
+                aria-label="Trooth Instagram Page"
+                title="Trooth Instagram Page"
+              >
+                <InstagramLogo />
+              </Link>
               <Link
                 href="https://www.linkedin.com/company/trooth-shop"
                 aria-label="Trooth LinkedIn page"

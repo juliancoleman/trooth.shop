@@ -13,19 +13,39 @@ type ProductCardProps = {
   price: number;
   routePath: string;
   image: string;
+  new: boolean;
 };
 
 export const ProductCard = (props: ProductCardProps) => (
   <div className="grid gap-6 rounded border-2 border-trooth-primary-100 bg-white p-8">
     <Link href={props.routePath}>
       <figure className="aspect-video bg-white">
-        <Image src={props.image} alt={props.title} width={300} height={169} className="filter drop-shadow-xl" />
+        <Image
+          src={props.image}
+          alt={props.title}
+          width={300}
+          height={169}
+          className="max-h-[169px] w-full object-contain drop-shadow-xl filter"
+        />
       </figure>
     </Link>
 
     <p className={cn(nunitoBold.className, "text-center text-xl")}>
       {props.title}
     </p>
+
+    {props.new ? (
+      <div className="flex items-center justify-center gap-2">
+        <p
+          className={cn(
+            nunitoBold.className,
+            "rounded-full bg-rose-600 px-4 py-2 text-sm text-white",
+          )}
+        >
+          New!
+        </p>
+      </div>
+    ) : null}
 
     <p className={cn(nunitoSansRegular.className, "text-center text-base")}>
       {dollarFormatter.format(props.price / 100)}

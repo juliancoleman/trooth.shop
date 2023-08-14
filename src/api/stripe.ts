@@ -8,7 +8,7 @@ import { stripe } from "@/config/stripe";
  * Product API methods
  */
 export async function getProducts() {
-  return stripe.products.list();
+  return stripe.products.list({ limit: 20 });
 }
 export async function getProduct(productId: string) {
   return stripe.products.retrieve(productId);
@@ -32,7 +32,7 @@ export const productsWithPrices = async (product: Stripe.Product) => {
  */
 export async function getPaymentLinks() {
   // Default limit is 10
-  return stripe.paymentLinks.list({ limit: 20 });
+  return stripe.paymentLinks.list({ limit: 40 });
 }
 
 /**
