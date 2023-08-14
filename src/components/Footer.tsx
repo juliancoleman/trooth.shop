@@ -44,14 +44,14 @@ export const Footer = () => (
           aria-label="Charcoal Tooth Powder product page"
           className={cn(nunitoRegular.className, "text-base")}
         >
-          Charcoal Tooth Powder
+          Charcoal Dry Toothpaste
         </Link>
         <Link
           href="/products/spearmint-tooth-powder"
           aria-label="Spearmint Tooth Powder product page"
           className={cn(nunitoRegular.className, "text-base")}
         >
-          Spearmint Tooth Powder
+          Spearmint Dry Toothpaste
         </Link>
         <Link
           href="/products/spearmint-mouth-rinse"
@@ -70,25 +70,25 @@ export const Footer = () => (
           href="/products/bundles/cinnamon-rinse-charcoal-tooth-powder"
           className={cn(nunitoRegular.className, "text-base")}
         >
-          Cinnamon Mouth Rinse + Charcoal Tooth Powder
+          Cinnamon Mouth Rinse + Charcoal Dry Toothpaste
         </Link>
         <Link
           href="/products/bundles/cinnamon-rinse-spearmint-tooth-powder"
           className={cn(nunitoRegular.className, "text-base")}
         >
-          Cinnamon Mouth Rinse + Spearmint Tooth Powder
+          Cinnamon Mouth Rinse + Spearmint Dry Toothpaste
         </Link>
         <Link
           href="/products/bundles/spearmint-rinse-charcoal-tooth-powder"
           className={cn(nunitoRegular.className, "text-base")}
         >
-          Spearmint Mouth Rinse + Charcoal Tooth Powder
+          Spearmint Mouth Rinse + Charcoal Dry Toothpaste
         </Link>
         <Link
           href="/products/bundles/spearmint-rinse-spearmint-tooth-powder"
           className={cn(nunitoRegular.className, "text-base")}
         >
-          Spearmint Mouth Rinse + Spearmint Tooth Powder
+          Spearmint Mouth Rinse + Spearmint Dry Toothpaste
         </Link>
       </nav>
 
